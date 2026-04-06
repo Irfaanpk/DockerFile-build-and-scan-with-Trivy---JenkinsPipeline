@@ -7,6 +7,14 @@ pipeline {
     }
 
     stages {
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Irfaanpk/DockerFile-build-and-scan-with-Trivy---JenkinsPipeline.git'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh '''
